@@ -1,0 +1,6 @@
+commission-calculator.exe -op=reconciliation -ar=C:\Users\Administrator\go\src\commission-calculator\data\AR.csv -gl=C:\Users\Administrator\go\src\commission-calculator\data\GL.csv
+
+commission-calculator.exe -op=commission -ar=C:\Users\Administrator\go\src\commission-calculator\data\AR.csv -gl=C:\Users\Administrator\go\src\commission-calculator\data\GL.csv -pi=C:\Users\Administrator\go\src\commission-calculator\data\PI.csv -rec=C:\Users\Administrator\go\src\commission-calculator\data\REC.csv
+
+
+commission-calculator.exe -op=commission -ar=C:\Users\Administrator\go\src\commission-calculator\data\AR.csv -gl=C:\Users\Administrator\go\src\commission-calculator\data\GL.csv -pi=C:\Users\Administrator\go\src\commission-calculator\data\PI.csv -rec=C:\Users\Administrator\go\src\commission-calculator\data\REC-4100.csv
