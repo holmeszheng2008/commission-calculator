@@ -27,6 +27,9 @@ func GenCommisionRpt() error {
 	commisionRptData := make(map[string][]CommissionRpt)
 	for invoiceNum, subMap := range RecData {
 		for accountNum, total := range subMap {
+			if ArData[invoiceNum] == nil {
+				continue
+			}
 			arRecord := ArData[invoiceNum][0]
 			billTo := arRecord.BillTo
 			postingDate := arRecord.PostingDate
