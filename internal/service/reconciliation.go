@@ -7,21 +7,23 @@ import (
 	"math"
 	"os"
 	"strconv"
+	"time"
 )
 
 var recFilePath string = "reconciliation.csv"
 var tolerance float64 = 0.0001
 var ArAccumulatedData map[string]map[string]float64
-var hitMemo map[string]map[string]bool
+var hitMemo map[string]map[string]bool = make(map[string]map[string]bool)
 
 func Reconciliate() error {
 	glAccumulatedData := make(map[string]map[string]float64)
 	mismatches := 0
 	err := os.Remove(recFilePath)
-	if err != nil {
-		log.Fatalln(fmt.Sprintf("OS error: File %s being used, can't be modified", recFilePath))
+	if err != nil && !os.IsNotExist(err) {
+		log.Fatalln(fmt.Sprintf("OS error: File %s being used, can't be deleted", recFilePath))
 		return err
 	}
+	time.Sleep(100 * time.Millisecond)
 	reconFilePtr, err := os.OpenFile(recFilePath, os.O_WRONLY|os.O_CREATE, 0777)
 	if err != nil {
 		log.Fatalln(fmt.Sprintf("OS error: File %s can't be created.", recFilePath))
