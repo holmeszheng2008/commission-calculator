@@ -263,10 +263,10 @@ func loadRec(recUrl string) error {
 			return err
 		}
 		if isHeader {
-			// invoice #,account #,total
+			// invoice #,account #,AR total
 			invoiceNumIndex = findIndex(record, "invoice #")
 			accountNumIndex = findIndex(record, "account #")
-			totalIndex = findIndex(record, "total")
+			totalIndex = findIndex(record, "AR total")
 			if invoiceNumIndex == -1 || accountNumIndex == -1 || totalIndex == -1 {
 				log.Fatalln("REC csv header bad format")
 				return errors.New("REC csv header bad format")
